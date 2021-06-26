@@ -30,3 +30,18 @@ func TestSumAll(t *testing.T) {
 		t.Errorf("got %v want %v", got, want)
 	}
 }
+
+func TestSumAllGo(t *testing.T) {
+	got := SumAllGo([]int{1, 2}, []int{0, 9})
+	want := []int{3, 9}
+
+	/*
+		Go does not let you use equality operators with slices.
+		You could write a function to iterate over each got and want slice and check their values but for convenience sake,
+		we can use reflect.DeepEqual which is useful for seeing if any two variables are the same.
+	*/
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("got %v want %v", got, want)
+	}
+
+}

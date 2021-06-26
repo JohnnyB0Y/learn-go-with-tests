@@ -8,3 +8,10 @@ func Sum(numbers [5]int) int {
 	}
 	return sum
 }
+
+func SumGo(numbers [5]int) (sum int) {
+	for i := range numbers {
+		sum += numbers[i]
+	}
+	return
+}
