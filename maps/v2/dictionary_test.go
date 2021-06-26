@@ -19,6 +19,20 @@ func TestSearch(t *testing.T) {
 
 		assertError(t, got, ErrNotFound)
 	})
+
+	// test value for key
+	t.Run("known word", func(t *testing.T) {
+		got, _ := dictionary.ValueForKey("test")
+		want := "this is just a test"
+
+		assertStrings(t, got, want)
+	})
+
+	t.Run("unknown word", func(t *testing.T) {
+		_, got := dictionary.ValueForKey("unknown")
+
+		assertError(t, got, ErrNotFound)
+	})
 }
 
 func assertStrings(t testing.TB, got, want string) {

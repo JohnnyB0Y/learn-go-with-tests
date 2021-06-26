@@ -17,3 +17,14 @@ func (d Dictionary) Search(word string) (string, error) {
 
 	return definition, nil
 }
+
+func (d Dictionary) ValueForKey(key string) (value string, err error) {
+
+	if v, ok := d[key]; ok {
+		value = v
+	} else {
+		err = ErrNotFound
+	}
+
+	return value, err
+}

@@ -22,3 +22,7 @@ func (d Dictionary) Search(word string) (string, error) {
 func (d Dictionary) Add(word, definition string) {
 	d[word] = definition
 }
+
+func (d Dictionary) SetValueForKey(value, key string) {
+	d[key] = value
+}

@@ -31,6 +31,16 @@ func TestAdd(t *testing.T) {
 	assertDefinition(t, dictionary, word, definition)
 }
 
+func TestSetValueForKey(t *testing.T) {
+	dictionary := Dictionary{}
+	word := "test"
+	definition := "this is just a test"
+
+	dictionary.SetValueForKey(definition, word)
+
+	assertDefinition(t, dictionary, word, definition)
+}
+
 func assertStrings(t testing.TB, got, want string) {
 	t.Helper()
 

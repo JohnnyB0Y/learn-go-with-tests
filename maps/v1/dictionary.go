@@ -7,3 +7,9 @@ type Dictionary map[string]string
 func (d Dictionary) Search(word string) string {
 	return d[word]
 }
+
+type IntDictionary map[string]int
+
+func (d IntDictionary) ValueForKey(key string) int {
+	return d[key]
+}
