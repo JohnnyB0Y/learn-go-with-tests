@@ -24,3 +24,24 @@ func TestHello(t *testing.T) {
 	})
 
 }
+
+func TestHelloGo(t *testing.T) {
+	assertCorrectMessage := func(t testing.TB, got, want string) {
+		t.Helper()
+		if got != want {
+			t.Errorf("got %q want %q", got, want)
+		}
+	}
+
+	t.Run("saying hello to people", func(t *testing.T) {
+		got := HelloGo("Chris")
+		want := chineseHelloPrefix + "Chris"
+		assertCorrectMessage(t, got, want)
+	})
+
+	t.Run("empty string defaults to 'world'", func(t *testing.T) {
+		got := HelloGo("")
+		want := chineseHelloPrefix + "World"
+		assertCorrectMessage(t, got, want)
+	})
+}
