@@ -4,3 +4,7 @@ package integers
 func Add(x, y int) int {
 	return x + y
 }
+
+func AddFloat(x, y float32) float32 {
+	return x + y
+}
