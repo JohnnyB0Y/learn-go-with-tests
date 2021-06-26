@@ -16,3 +16,9 @@ func BenchmarkRepeat(b *testing.B) {
 		Repeat("a")
 	}
 }
+
+func BenchmarkRepeatGo(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		RepeatGo("b")
+	}
+}

@@ -10,3 +10,10 @@ func Repeat(character string) string {
 	}
 	return repeated
 }
+
+func RepeatGo(character string) (repeated string) {
+	for i := 0; i < repeatCount; i++ {
+		repeated += character
+	}
+	return
+}
